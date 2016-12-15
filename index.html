@@ -7,14 +7,14 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="scss/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
   	
-	<title>Content Filters | CodyHouse</title>
+	<title>JavaScript Lab by Hackages</title>
 </head>
 <body>
 	<header class="cd-header">
-		<h1>Content Filters</h1>
+		<h1>JavaScript Lab</h1>
 	</header>
 
 	<main class="cd-main-content">
@@ -25,32 +25,174 @@
 						<a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
 					</li> 
 					<li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-					<li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Color 1</a></li>
-					<li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Color 2</a></li>
+					<li class="filter" data-filter=".belgium"><a href="#0" data-type="belgium">Belgique</a></li>
+					<li class="filter" data-filter=".amsterdam"><a href="#0" data-type="amsterdam">Amsterdam</a></li>
+					<li class="filter" data-filter=".paris"><a href="#0" data-type="paris">Paris</a></li>
+					<li class="filter" data-filter=".dublin"><a href="#0" data-type="dublin">Dublin</a></li>
+					<li class="filter" data-filter=".geneve"><a href="#0" data-type="geneve">Geneve</a></li>
+					<li class="filter" data-filter=".zurich"><a href="#0" data-type="zurich">Zurich</a></li>
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section class="cd-gallery">
+			<div class="cd-gallery-header">
+				<h2>HackCamp</h2>
+				<p>Assister aux HackCamp...Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error autem hic pariatur aperiam earum doloremque, repudiandae maxime ullam similique odit quae architecto vel expedita velit quas obcaecati ipsam, debitis porro!</p>
+			</div>
 			<ul>
-				<li class="mix color-1 check1 radio2 option3"><img src="img/img-1.jpg" alt="Image 1"></li>
-				<li class="mix color-2 check2 radio2 option2"><img src="img/img-2.jpg" alt="Image 2"></li>
-				<li class="mix color-1 check3 radio3 option1"><img src="img/img-3.jpg" alt="Image 3"></li>
-				<li class="mix color-1 check3 radio2 option4"><img src="img/img-4.jpg" alt="Image 4"></li>
-				<li class="mix color-1 check1 radio3 option2"><img src="img/img-5.jpg" alt="Image 5"></li>
-				<li class="mix color-2 check2 radio3 option3"><img src="img/img-6.jpg" alt="Image 6"></li>
-				<li class="mix color-2 check2 radio2 option1"><img src="img/img-7.jpg" alt="Image 7"></li>
-				<li class="mix color-1 check1 radio3 option4"><img src="img/img-8.jpg" alt="Image 8"></li>
-				<li class="mix color-2 check1 radio2 option3"><img src="img/img-9.jpg" alt="Image 9"></li>
-				<li class="mix color-1 check3 radio2 option4"><img src="img/img-10.jpg" alt="Image 10"></li>
-				<li class="mix color-1 check3 radio3 option2"><img src="img/img-11.jpg" alt="Image 11"></li>
-				<li class="mix color-2 check1 radio3 option1"><img src="img/img-12.jpg" alt="Image 12"></li>
+				<li class="mix large belgium">
+					<img src="img/category/category_angular2.jpg" alt="Angular 2">
+					<div>
+						<h5>Angular 2</h5>
+						<p>12/02/2017 @Belgium</p>
+					</div>
+				</li>
+				<li class="mix large amsterdam">
+					<img src="img/category/category_typescript.jpg" alt="TypeScript">
+					<div>
+						<h5>TypeScript</h5>
+						<p>12/02/2017 @Amsterdam</p>
+					</div>
+				</li>
+				<li class="mix large paris">
+					<img src="img/category/category_reactJS.jpg" alt="React JS">
+					<div>
+						<h5>React JS</h5>
+						<p>12/02/2017 @Paris</p>
+					</div>
+				</li>
+				<li class="mix large dublin">
+					<img src="img/category/category_ecmascript.jpg" alt="ES6">
+					<div>
+						<h5>ES6</h5>
+						<p>12/02/2017 @Dublin</p>
+					</div>
+				</li>
+				<li class="mix large geneve">
+					<img src="img/category/category_javascript.jpg" alt="Javascript">
+					<div>
+						<h5>Javascript</h5>
+						<p>12/02/2017 @Geneve</p>
+					</div>
+				</li>
+				<li class="mix large zurich">
+					<img src="img/category/category_webpack.jpg" alt="Webpack">
+					<div>
+						<h5>Webpack</h5>
+						<p>12/02/2017 @Zurich</p>
+					</div>
+				</li>
+				<li class="gap large"></li>
+				<li class="gap large"></li>
+				<li class="gap large"></li>
+				<li class="gap large"></li>
+			</ul>
+			<div class="cd-fail-message">No results found</div>
+		</section> <!-- cd-gallery -->
+
+		<section class="cd-gallery">
+			<div class="cd-gallery-header">
+				<h2>HackJam</h2>
+				<p>Assister aux HackJam...Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error autem hic pariatur aperiam earum doloremque, repudiandae maxime ullam similique odit quae architecto vel expedita velit quas obcaecati ipsam, debitis porro!</p>
+			</div>
+			<ul>
+				<li class="mix color-1 check1 radio2 option3">
+					<div class="picture">
+						<img src="img/city/javascript-lab-belgium.jpg" alt="" class="city">
+						<img src="img/logo/logo_angular2.png" alt="Angular 2" class="language">
+					</div>
+					<div class="cd-gallery-description">
+						<h5>Angular 2</h5>
+						<p>
+							16/04/2017
+							<br/>@Belgium
+						</p>
+					</div>
+				</li>
+				<li class="mix color-2 check2 radio2 option2">
+					<div class="picture">
+						<img src="img/city/javascript-lab-amsterdam.jpg" alt="" class="city">
+						<img src="img/logo/logo_typescript.png" alt="TypeScript" class="language">
+					</div>
+					<div class="cd-gallery-description">
+						<h5>TypeScript</h5>
+						<p>
+							16/04/2017
+							<br/>@Amsterdam
+						</p>
+					</div>
+				</li>
+				<li class="mix color-1 check3 radio3 option1">
+					<div class="picture">
+						<img src="img/city/javascript-lab-paris.jpg" alt="" class="city">
+						<img src="img/logo/logo_reactJS.png" alt="React JS" class="language">
+					</div>
+					<div class="cd-gallery-description">
+						<h5>React JS</h5>
+						<p>
+							16/04/2017
+							<br/>@Paris
+						</p>
+					</div>
+				</li>
+				<li class="mix color-1 check3 radio2 option4">
+					<div class="picture">
+						<img src="img/city/javascript-lab-dublin.jpg" alt="" class="city">
+						<img src="img/logo/logo_ecmascript.png" alt="ES6" class="language">
+					</div>
+					<div class="cd-gallery-description">
+						<h5>ES6</h5>
+						<p>
+							16/04/2017
+							<br/>@Dublin
+						</p>
+					</div>
+				</li>
+				<li class="mix color-1 check1 radio3 option2">
+					<div class="picture">
+						<img src="img/city/javascript-lab-geneve.jpg" alt="" class="city">
+						<img src="img/logo/logo_javascript.png" alt="Javascript" class="language">
+					</div>
+					<div class="cd-gallery-description">
+						<h5>Javascript</h5>
+						<p>
+							16/04/2017
+							<br/>@Geneve
+						</p>
+					</div>
+				</li>
+				<li class="mix color-2 check2 radio3 option3">
+					<div class="picture">
+						<img src="img/city/javascript-lab-zurich.jpg" alt="" class="city">
+						<img src="img/logo/logo_webpack.png" alt="Webpack" class="language">
+					</div>
+					<div class="cd-gallery-description">
+						<h5>Webpack</h5>
+						<p>
+							16/04/2017
+							<br/>@Zurich
+						</p>
+					</div>
+				</li>
+				<li class="gap"></li>
 				<li class="gap"></li>
 				<li class="gap"></li>
 				<li class="gap"></li>
 			</ul>
 			<div class="cd-fail-message">No results found</div>
 		</section> <!-- cd-gallery -->
+
+		<section class="companies">
+			<h2>Lorem ipsum...	</h2>
+			<ul>
+				<li><img src="http://vignette2.wikia.nocookie.net/logopedia/images/f/f9/P%26G_logo.png/revision/latest?cb=20120901003759" alt=""></li>
+				<li><img src="http://www.logo20.com/logo-3m/logo-3m-2.png" alt=""></li>
+				<li><img src="https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png" alt=""></li>
+				<li><img src="http://logok.org/wp-content/uploads/2014/03/Nike-logo.png" alt=""></li>
+				<li><img src="http://logok.org/wp-content/uploads/2014/03/MasterCard-Logo.png" alt=""></li>
+			</ul>
+		</section>
 
 		<div class="cd-filter">
 			<form>

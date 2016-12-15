@@ -1,9 +1,6 @@
-@import 'bourbon'; // http://bourbon.io/
-
+@import 'bourbon/bourbon'; // http://bourbon.io/
 @import '../partials/variables'; // colors, fonts etc...
-
 @import '../partials/mixins'; // custom mixins
-
 @import '../partials/layout'; // responsive grid and media queries
 
 /* -------------------------------- 
@@ -47,22 +44,23 @@ Main Components
 
 .cd-header {
 	position: relative;
-	height: 150px;
-	background-color: $color-1;
+	height: 500px;
+	background: url('../img/header.jpg') no-repeat center;
+	background-size: cover;
 
 	h1 {
-		color: $color-3;
-		line-height: 150px;
+		line-height: 500px;
 		text-align: center;
-		font-size: 2.4rem;
-		font-weight: 300;
+		font-family: $primary-font;
+		font-size: 3rem;
+		color: $color-3;
 	}
 
 	@include MQ(L) {
-		height: 180px;
+		height: 300px;
 
 		h1 {
-			line-height: 180px;
+			line-height: 300px;
 		}
 	}
 }
@@ -82,6 +80,8 @@ Main Components
 
 		.cd-gallery {
 			padding-top: 26px+$tab-filter-height;
+
+			& ~ .cd-gallery{padding-top: 0;}
 		}
 
 		.cd-filter {
@@ -109,6 +109,30 @@ Main Components
 		@include MQ(L) {
 			.cd-gallery {
 				padding-top: 50px+$tab-filter-height;
+			}
+		}
+	}
+}
+
+.companies{
+	padding: 4em;
+	background: $color-2;
+	text-align: center;
+	color: $color-3;
+
+	ul{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		li{
+			max-width: 80px;
+			margin: 2em 2em 0;
+
+			img{
+				width: 100%;
+    			filter: brightness(.4) grayscale(1);
 			}
 		}
 	}
@@ -283,12 +307,64 @@ xgallery
 	padding: 26px 5%;
 	width: 100%;
 
-	li {
+	.cd-gallery-header{
 		margin-bottom: 1.6em;
+		color: $color-4;
+
+		h2{
+			margin-bottom: .7em;
+			text-transform: uppercase;
+			font-family: $primary-font;
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+	}
+
+	//.cd-gallery-description{color: $color-4;}
+
+	ul {
+		@include clearfix;
+		text-align: justify;
+	}
+
+	li {
+		width: calc(33.333% - 1rem);
+		margin-bottom: 1.6em;
+		//padding: 2em;
 		box-shadow: 0 1px 4px rgba(#000, .1);
 		display: none;
+		background: $color-3;
 
+		div:not(.picture){
+			padding: 1em 0;
+			text-align: center;
+
+			h5{
+				margin-bottom: .5em;
+				font-size: 1.2em;
+				font-weight: bold;
+			}
+
+			p{color: #888;}
+		}
+
+		.picture{
+			position: relative;
+
+			.language{
+				position: absolute;
+				bottom: 5px;
+				left: 5px;
+				width: 30%;
+				min-width: 40px;
+				max-width: 100px;
+			}
+		}
+
+		&.large{width: calc(50% - 1rem);}
 		&.gap {
+			margin: 0;
+			padding: 0;
 			/* used in combination with text-align: justify to align gallery elements */
 			opacity: 0;
 			height: 0;
@@ -309,14 +385,16 @@ xgallery
 	@include MQ(M) {
 		padding: 40px 3%;
 
-		ul {
-			@include clearfix;
-			text-align: justify;
-		}
+		// ul {
+		// 	@include clearfix;
+		// 	text-align: justify;
+		// }
 
 		li {
-			width: 48%;
+			width: calc(20% - 1rem);
 			margin-bottom: 2em;
+			
+			&.large{width: calc(33.33333% - 1rem);}
 		}
 	}
 
@@ -326,7 +404,9 @@ xgallery
 		@include transition(width .3s);
 
 		li { 
-			width: 23%;
+			width: calc(20% - 1rem);
+
+			&.large{width: calc(25% - 1rem);}
 		}
 
 		&.filter-is-visible {
